@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+
 <head>
     <title>AGRI-HUB MY ACCOUNT</title>
 
     <?php
 
-    include("./include/header.php")
+    include("./include/header.php");
+    if (!isset($_SESSION['id'])) {
+    ?>
+
+        <script>
+            history.back();
+        </script>
+    <?php
+    }
+
+    if (isset($_POST['type'])) {
+        $_SESSION = array();
+        $_SESSION['id'] = null;
+        session_destroy();
+    ?>
+
+        <script>
+            history.back();
+        </script>
+    <?php
+    }
     ?>
 
 
@@ -204,7 +225,15 @@
         </div>
     </div>
     <!-- End My Account -->
+    <div>
+        <div class="flex-row text-center m-5">
+            <form action="./" method="post">
+                <input type="hidden" name="type">
+                <button class="btn btn-danger w-100" type="submit" type="button">SIGN OUT</button>
+            </form>
 
+        </div>
+    </div>
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
         <div class="main-instagram owl-carousel owl-theme">
@@ -292,9 +321,10 @@
     </div>
     <!-- End Instagram Feed  -->
 
-<?php
+    <?php
 
-   include("./include/footer.php")
+    include("./include/footer.php")
 
-   ?>
+    ?>
+
 </html>

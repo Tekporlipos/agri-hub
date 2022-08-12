@@ -69,7 +69,7 @@
                                 <?php
                                 } else {
                                 ?>
-                                    <a class="text-white p-1" style="background-color: #b0b435;" href="signup.php">Register</a>
+                                    <a class="text-white p-1" style="background-color: #b0b435;" href="signup.php">Register Now</a>
                                 <?php
                                 }
 

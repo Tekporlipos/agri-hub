@@ -303,7 +303,11 @@
      top: 13px;
      right: 10px;
 }
-
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
 .login-box .dropdown-item{
 	padding: 5px 10px;
 }

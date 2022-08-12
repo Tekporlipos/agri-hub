@@ -6,7 +6,6 @@
 
     <?php
     include("./include/header.php");
-    require_once("./php/dbconection.php");
 
 
     if (isset($_SESSION['id'])) {
@@ -44,7 +43,7 @@
 
 
                 <script>
-                    history.back();
+                    window.location.href = "./index.php";
                 </script>
 
     <?php
@@ -88,7 +87,7 @@
             </h2>
 
             <h5><a data-toggle="collapse" href="#formLogin" role="button" aria-expanded="false">Click here to Login</a></h5>
-            <form class="mt-3 collapse review-form-box" id="formLogin" method="post" target="./">
+            <form class="mt-3 collapse review-form-box" id="formLogin" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="InputEmail" class="mb-0">Email Address</label>

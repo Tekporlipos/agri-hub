@@ -105,7 +105,7 @@
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
                                         <a class="btn hvr-hover text-white" data-fancybox-close="">Buy New</a>
-                                        <a class="btn hvr-hover text-white" data-fancybox-close="" id="shop<?php echo $row['id'];  ?>" onclick="addCart('<?php echo $row['name'];  ?>', '<?php echo explode(',', $row['url'])[0];  ?>', '<?php echo $row['price1'];  ?>', '1', '<?php echo $_SESSION['id'];  ?>', '<?php echo $row['id'];  ?>','shop<?php echo $row['id'];  ?>')">Add to Cart</a>
+                                        <a class="btn hvr-hover text-white" data-fancybox-close="" id="shop<?php echo $row['id'];  ?>" onclick="addCart('<?php echo $row['name'];  ?>', '<?php echo explode(',', $row['url'])[0];  ?>', '<?php echo $row['price1'];  ?>', '1', '<?php echo isset($_SESSION['id'])? $_SESSION['id']:null;  ?>', '<?php echo $row['id'];  ?>','shop<?php echo $row['id'];  ?>')">Add to Cart</a>
                                     </div>
                                 </div>
 
@@ -187,7 +187,7 @@
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                         <li><a class="text-white btn" data-toggle="tooltip" data-placement="right" title="Add to Wishlist" id="shopw11<?php echo $row['id'];  ?>" onclick="addWishList('<?php echo $row['name'];  ?>', '<?php echo explode(',', $row['url'])[0];  ?>', '<?php echo $row['price1'];  ?>','<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : null;  ?>', '<?php echo $row['id'];  ?>', '<?php echo $row['status'];  ?>','shopw11<?php echo $row['id'];  ?>')"><i class="far fa-heart"></i></a></li>
                                                     </ul>
-                                                    <a class="btn cart  text-white" id="shop1<?php echo $row2['id'];  ?>" onclick="addCart('<?php echo $row2['name'];  ?>', '<?php echo explode(',', $row2['url'])[0];  ?>', '<?php echo $row2['price1'];  ?>', '1', '<?php echo $_SESSION['id'];  ?>', '<?php echo $row2['id'];  ?>','shop1<?php echo $row2['id'];  ?>')">Add to Cart</a>
+                                                    <a class="btn cart  text-white" id="shop1<?php echo $row2['id'];  ?>" onclick="addCart('<?php echo $row2['name'];  ?>', '<?php echo explode(',', $row2['url'])[0];  ?>', '<?php echo $row2['price1'];  ?>', '1', '<?php echo isset($_SESSION['id']) ? $_SESSION['id'] : null;  ?>', '<?php echo $row2['id'];  ?>','shop1<?php echo $row2['id'];  ?>')">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="why-text">

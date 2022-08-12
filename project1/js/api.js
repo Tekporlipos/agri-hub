@@ -8,7 +8,7 @@ function deleteRow(table, userid, id, path) {
 }
 
 function addCart(name, url, price, quantity, userid, id, path) {
-    if (userid != null) {
+    if (Number(userid) > 0) {
         if (document.getElementById("qunatValue")) {
         quantity = document.getElementById("qunatValue").value;
     }
@@ -21,18 +21,22 @@ function addCart(name, url, price, quantity, userid, id, path) {
     });
     data.open("get", `./php/api.php?name=${name}&url=${url}&price=${price}&quantity=${quantity}&userid=${userid}&id=${id}`);
     data.send();
+    }else {
+         document.getElementById(path).innerText = "Sign up";
     }
     
 }
 
 function addWishList(name, url, price, userid,id,status,path) {
-     if (userid != null) {
+     if (Number(userid) > 0) {
          const data = new XMLHttpRequest();
     data.onload = (data => {
        document.getElementById(path).innerText = "Wishlist Added";
     });
     data.open("get", `./php/api.php?name=${name}&url=${url}&price=${price}&userid=${userid}&id=${id}&status=${status}`);
     data.send();
+     } else {
+         document.getElementById(path).innerText = "Sign up";
     }
    
 }
